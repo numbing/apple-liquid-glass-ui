@@ -25,16 +25,64 @@ import {
   Stack,
   Grid,
   Divider,
+  GlassTopNav,
+  GlassNavItem,
+  GlassBottomNav,
 } from 'glass-ui';
 
 function Demo() {
   const [sheetOpen, setSheetOpen] = useState(false);
   const [dropdownValue, setDropdownValue] = useState('');
   const [checked, setChecked] = useState(false);
+  const [activeNav, setActiveNav] = useState('home');
 
   return (
-    <div className="gl-base" style={{ minHeight: '100vh', padding: '2rem' }}>
-      <Container size="xl">
+    <div
+      className="gl-base"
+      style={{
+        minHeight: '100vh',
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%)',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      {/* Top Navigation */}
+      <GlassTopNav>
+        <GlassTopNav.Left>
+          <div className="gl-logo">glass-ui</div>
+        </GlassTopNav.Left>
+        <GlassTopNav.Center>
+          <GlassNavItem
+            active={activeNav === 'home'}
+            onClick={() => setActiveNav('home')}
+          >
+            Home
+          </GlassNavItem>
+          <GlassNavItem
+            active={activeNav === 'components'}
+            onClick={() => setActiveNav('components')}
+          >
+            Components
+          </GlassNavItem>
+          <GlassNavItem
+            active={activeNav === 'docs'}
+            onClick={() => setActiveNav('docs')}
+          >
+            Docs
+          </GlassNavItem>
+          <GlassNavItem
+            active={activeNav === 'examples'}
+            onClick={() => setActiveNav('examples')}
+          >
+            Examples
+          </GlassNavItem>
+        </GlassTopNav.Center>
+        <GlassTopNav.Right>
+          <Button variant="subtle" size="sm">Sign In</Button>
+          <Button variant="primary" size="sm">Get Started</Button>
+        </GlassTopNav.Right>
+      </GlassTopNav>
+
+      <Container size="xl" style={{ padding: '2rem' }}>
         <Stack gap="2xl">
           {/* Header */}
           <div>
@@ -286,6 +334,34 @@ function Demo() {
           </Button>
         </Sheet.Footer>
       </Sheet>
+
+      {/* Bottom Navigation (Mobile) */}
+      <GlassBottomNav>
+        <GlassNavItem
+          active={activeNav === 'home'}
+          onClick={() => setActiveNav('home')}
+          icon="🏠"
+          label="Home"
+        />
+        <GlassNavItem
+          active={activeNav === 'components'}
+          onClick={() => setActiveNav('components')}
+          icon="🧩"
+          label="Components"
+        />
+        <GlassNavItem
+          active={activeNav === 'docs'}
+          onClick={() => setActiveNav('docs')}
+          icon="📚"
+          label="Docs"
+        />
+        <GlassNavItem
+          active={activeNav === 'examples'}
+          onClick={() => setActiveNav('examples')}
+          icon="✨"
+          label="Examples"
+        />
+      </GlassBottomNav>
     </div>
   );
 }

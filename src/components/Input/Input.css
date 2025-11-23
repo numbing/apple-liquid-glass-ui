@@ -1,4 +1,4 @@
-/* Input Component Styles */
+/* Input Component Styles - Apple Glass */
 
 .gl-input {
   width: 100%;
@@ -6,11 +6,12 @@
   font-weight: var(--gl-font-weight-regular);
   color: var(--gl-color-text);
   background: var(--gl-color-surface);
-  backdrop-filter: blur(var(--gl-blur-surface));
-  -webkit-backdrop-filter: blur(var(--gl-blur-surface));
+  backdrop-filter: blur(var(--gl-blur-control)) saturate(160%);
+  -webkit-backdrop-filter: blur(var(--gl-blur-control)) saturate(160%);
   border: 1px solid var(--gl-color-border);
   outline: none;
   transition: all var(--gl-transition-fast);
+  box-shadow: var(--gl-shadow-inner);
 }
 
 .gl-input::placeholder {
@@ -19,63 +20,69 @@
 
 .gl-input:hover:not(:disabled) {
   border-color: var(--gl-color-border-strong);
+  background: var(--gl-color-surface-strong);
 }
 
 .gl-input:focus {
-  border-color: var(--gl-color-accent);
-  box-shadow: var(--gl-shadow-focus);
+  border-color: var(--gl-color-border-focus);
+  background: var(--gl-color-surface-elevated);
+  box-shadow: var(--gl-shadow-focus), var(--gl-shadow-inner);
 }
 
 .gl-input:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
 /* Sizes */
 .gl-input-sm {
-  height: 32px;
-  padding: 0 var(--gl-space-md);
-  font-size: var(--gl-font-size-sm);
-  border-radius: var(--gl-radius-sm);
-}
-
-.gl-input-md {
   height: 40px;
   padding: 0 var(--gl-space-lg);
-  font-size: var(--gl-font-size-md);
+  font-size: var(--gl-font-size-sm);
   border-radius: var(--gl-radius-md);
 }
 
-.gl-input-lg {
-  height: 48px;
+.gl-input-md {
+  height: 44px;
   padding: 0 var(--gl-space-xl);
-  font-size: var(--gl-font-size-lg);
+  font-size: var(--gl-font-size-md);
   border-radius: var(--gl-radius-lg);
+}
+
+.gl-input-lg {
+  height: 52px;
+  padding: 0 var(--gl-space-2xl);
+  font-size: var(--gl-font-size-lg);
+  border-radius: var(--gl-radius-xl);
 }
 
 /* Textarea */
 .gl-textarea {
-  min-height: 80px;
-  padding: var(--gl-space-md);
+  min-height: 100px;
+  padding: var(--gl-space-lg);
   resize: vertical;
+  line-height: var(--gl-line-height-normal);
 }
 
 .gl-textarea-sm {
-  padding: var(--gl-space-sm);
+  padding: var(--gl-space-md);
   font-size: var(--gl-font-size-sm);
-  border-radius: var(--gl-radius-sm);
+  border-radius: var(--gl-radius-md);
+  min-height: 80px;
 }
 
 .gl-textarea-md {
-  padding: var(--gl-space-md);
+  padding: var(--gl-space-lg);
   font-size: var(--gl-font-size-md);
-  border-radius: var(--gl-radius-md);
+  border-radius: var(--gl-radius-lg);
+  min-height: 100px;
 }
 
 .gl-textarea-lg {
-  padding: var(--gl-space-lg);
+  padding: var(--gl-space-xl);
   font-size: var(--gl-font-size-lg);
-  border-radius: var(--gl-radius-lg);
+  border-radius: var(--gl-radius-xl);
+  min-height: 120px;
 }
 
 /* Input Group */
@@ -87,25 +94,44 @@
 
 .gl-input-label {
   font-size: var(--gl-font-size-sm);
-  font-weight: var(--gl-font-weight-medium);
+  font-weight: var(--gl-font-weight-semibold);
   color: var(--gl-color-text);
+  letter-spacing: var(--gl-letter-spacing-tight);
 }
 
 .gl-input-hint {
   font-size: var(--gl-font-size-xs);
   color: var(--gl-color-text-secondary);
+  line-height: var(--gl-line-height-normal);
 }
 
 .gl-input-error {
   font-size: var(--gl-font-size-xs);
   color: var(--gl-color-error);
+  font-weight: var(--gl-font-weight-medium);
 }
 
 /* Error State */
 .gl-input-invalid {
   border-color: var(--gl-color-error);
+  background: rgba(255, 59, 48, 0.04);
 }
 
 .gl-input-invalid:focus {
-  box-shadow: 0 0 0 4px rgba(255, 59, 48, 0.25);
+  box-shadow: 0 0 0 4px rgba(255, 59, 48, 0.15), var(--gl-shadow-inner);
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .gl-input-sm {
+    height: 44px;
+  }
+
+  .gl-input-md {
+    height: 48px;
+  }
+
+  .gl-input-lg {
+    height: 52px;
+  }
 }

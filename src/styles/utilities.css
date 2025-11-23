@@ -1,4 +1,4 @@
-/* glass-ui Utility Classes */
+/* glass-ui Utility Classes - Apple Glass Style */
 
 @import './tokens.css';
 
@@ -10,27 +10,50 @@
 .gl-base {
   font-family: var(--gl-font-family);
   color: var(--gl-color-text);
-  background: var(--gl-color-bg);
   line-height: var(--gl-line-height-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-/* Glass Surface */
+/* Glass Surface - True liquid glass */
 .gl-glass {
   background: var(--gl-color-surface);
-  backdrop-filter: blur(var(--gl-blur-surface));
-  -webkit-backdrop-filter: blur(var(--gl-blur-surface));
+  backdrop-filter: blur(var(--gl-blur-surface)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--gl-blur-surface)) saturate(180%);
+  border: 1px solid var(--gl-color-border-subtle);
+  box-shadow: var(--gl-shadow-inner);
 }
 
 .gl-glass-strong {
-  background: var(--gl-color-surface);
-  backdrop-filter: blur(var(--gl-blur-sheet));
-  -webkit-backdrop-filter: blur(var(--gl-blur-sheet));
+  background: var(--gl-color-surface-strong);
+  backdrop-filter: blur(var(--gl-blur-sheet)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--gl-blur-sheet)) saturate(180%);
+  border: 1px solid var(--gl-color-border);
+  box-shadow: var(--gl-shadow-inner);
+}
+
+.gl-glass-elevated {
+  background: var(--gl-color-surface-elevated);
+  backdrop-filter: blur(var(--gl-blur-surface)) saturate(200%);
+  -webkit-backdrop-filter: blur(var(--gl-blur-surface)) saturate(200%);
+  border: 1px solid var(--gl-color-border-subtle);
+  box-shadow: var(--gl-shadow-elevated), var(--gl-shadow-inner);
 }
 
 .gl-glass-subtle {
   background: var(--gl-color-surface);
-  backdrop-filter: blur(var(--gl-blur-tooltip));
-  -webkit-backdrop-filter: blur(var(--gl-blur-tooltip));
+  backdrop-filter: blur(var(--gl-blur-tooltip)) saturate(160%);
+  -webkit-backdrop-filter: blur(var(--gl-blur-tooltip)) saturate(160%);
+  border: 1px solid var(--gl-color-border-subtle);
+}
+
+/* Surface variants */
+.gl-surface-nav {
+  background: var(--gl-color-surface-nav);
+  backdrop-filter: blur(var(--gl-blur-nav)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--gl-blur-nav)) saturate(180%);
+  border-bottom: 1px solid var(--gl-color-border);
 }
 
 /* Border Radius */
@@ -39,17 +62,23 @@
 .gl-rounded-md { border-radius: var(--gl-radius-md); }
 .gl-rounded-lg { border-radius: var(--gl-radius-lg); }
 .gl-rounded-xl { border-radius: var(--gl-radius-xl); }
+.gl-rounded-2xl { border-radius: var(--gl-radius-2xl); }
 .gl-rounded-full { border-radius: var(--gl-radius-full); }
 
 /* Shadows */
 .gl-shadow-soft { box-shadow: var(--gl-shadow-soft); }
 .gl-shadow-md { box-shadow: var(--gl-shadow-md); }
+.gl-shadow-elevated { box-shadow: var(--gl-shadow-elevated); }
 .gl-shadow-lg { box-shadow: var(--gl-shadow-lg); }
 .gl-shadow-none { box-shadow: none; }
 
 /* Borders */
 .gl-border {
   border: 1px solid var(--gl-color-border);
+}
+
+.gl-border-subtle {
+  border: 1px solid var(--gl-color-border-subtle);
 }
 
 .gl-border-strong {
@@ -68,6 +97,7 @@
 .gl-p-lg { padding: var(--gl-space-lg); }
 .gl-p-xl { padding: var(--gl-space-xl); }
 .gl-p-2xl { padding: var(--gl-space-2xl); }
+.gl-p-3xl { padding: var(--gl-space-3xl); }
 
 .gl-m-xs { margin: var(--gl-space-xs); }
 .gl-m-sm { margin: var(--gl-space-sm); }
@@ -84,6 +114,7 @@
 .gl-text-xl { font-size: var(--gl-font-size-xl); }
 .gl-text-2xl { font-size: var(--gl-font-size-2xl); }
 .gl-text-3xl { font-size: var(--gl-font-size-3xl); }
+.gl-text-4xl { font-size: var(--gl-font-size-4xl); }
 
 .gl-text-regular { font-weight: var(--gl-font-weight-regular); }
 .gl-text-medium { font-weight: var(--gl-font-weight-medium); }
@@ -91,13 +122,18 @@
 .gl-text-bold { font-weight: var(--gl-font-weight-bold); }
 
 .gl-text-primary { color: var(--gl-color-text); }
-.gl-text-secondary { color: var(--gl-color-text-secondary); }
-.gl-text-tertiary { color: var(--gl-color-text-tertiary); }
+.gl-text-muted { color: var(--gl-color-text-muted); }
+.gl-text-subtle { color: var(--gl-color-text-subtle); }
 .gl-text-accent { color: var(--gl-color-accent); }
+.gl-text-inverted { color: var(--gl-color-text-inverted); }
 
 /* Layout */
 .gl-flex {
   display: flex;
+}
+
+.gl-inline-flex {
+  display: inline-flex;
 }
 
 .gl-flex-col {
@@ -105,23 +141,21 @@
   flex-direction: column;
 }
 
-.gl-items-center {
-  align-items: center;
-}
+.gl-items-start { align-items: flex-start; }
+.gl-items-center { align-items: center; }
+.gl-items-end { align-items: flex-end; }
 
-.gl-justify-center {
-  justify-content: center;
-}
-
-.gl-justify-between {
-  justify-content: space-between;
-}
+.gl-justify-start { justify-content: flex-start; }
+.gl-justify-center { justify-content: center; }
+.gl-justify-end { justify-content: flex-end; }
+.gl-justify-between { justify-content: space-between; }
 
 .gl-gap-xs { gap: var(--gl-space-xs); }
 .gl-gap-sm { gap: var(--gl-space-sm); }
 .gl-gap-md { gap: var(--gl-space-md); }
 .gl-gap-lg { gap: var(--gl-space-lg); }
 .gl-gap-xl { gap: var(--gl-space-xl); }
+.gl-gap-2xl { gap: var(--gl-space-2xl); }
 
 /* Transitions */
 .gl-transition {
@@ -140,6 +174,8 @@
 .gl-interactive {
   cursor: pointer;
   transition: all var(--gl-transition-fast);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .gl-interactive:hover {
@@ -148,6 +184,7 @@
 
 .gl-interactive:active {
   background: var(--gl-color-active);
+  transform: scale(0.98);
 }
 
 .gl-interactive:focus-visible {
@@ -160,7 +197,58 @@
   position: fixed;
   inset: 0;
   background: var(--gl-color-overlay);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   z-index: var(--gl-z-modal);
+  animation: gl-fade-in var(--gl-transition-base);
+}
+
+/* Animations */
+@keyframes gl-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gl-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes gl-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .gl-interactive:active {
+    transform: scale(0.97);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

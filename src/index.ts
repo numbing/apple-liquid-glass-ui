@@ -10,6 +10,7 @@ export * from './components/Card';
 export * from './components/Checkbox';
 export * from './components/Input';
 export * from './components/Layout';
+export * from './components/Navigation';
 export * from './components/Select';
 export * from './components/Sheet';
 export * from './components/Switch';

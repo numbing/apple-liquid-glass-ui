@@ -1,4 +1,4 @@
-/* Button Component Styles */
+/* Button Component Styles - Apple Glass */
 
 .gl-btn {
   display: inline-flex;
@@ -6,17 +6,18 @@
   justify-content: center;
   gap: var(--gl-space-sm);
   font-family: var(--gl-font-family);
-  font-weight: var(--gl-font-weight-medium);
+  font-weight: var(--gl-font-weight-semibold);
   border: 1px solid var(--gl-color-border);
   cursor: pointer;
   transition: all var(--gl-transition-fast);
   outline: none;
   white-space: nowrap;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .gl-btn:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
@@ -26,24 +27,27 @@
 
 /* Sizes */
 .gl-btn-sm {
-  height: 32px;
-  padding: 0 var(--gl-space-md);
-  font-size: var(--gl-font-size-sm);
-  border-radius: var(--gl-radius-sm);
-}
-
-.gl-btn-md {
-  height: 40px;
+  height: 36px;
+  min-height: 36px;
   padding: 0 var(--gl-space-lg);
-  font-size: var(--gl-font-size-md);
+  font-size: var(--gl-font-size-sm);
   border-radius: var(--gl-radius-md);
 }
 
-.gl-btn-lg {
-  height: 48px;
+.gl-btn-md {
+  height: 44px;
+  min-height: 44px;
   padding: 0 var(--gl-space-xl);
-  font-size: var(--gl-font-size-lg);
+  font-size: var(--gl-font-size-md);
   border-radius: var(--gl-radius-lg);
+}
+
+.gl-btn-lg {
+  height: 52px;
+  min-height: 52px;
+  padding: 0 var(--gl-space-2xl);
+  font-size: var(--gl-font-size-lg);
+  border-radius: var(--gl-radius-xl);
 }
 
 /* Variants */
@@ -51,37 +55,41 @@
   background: var(--gl-color-accent);
   border-color: var(--gl-color-accent);
   color: var(--gl-color-accent-text);
-  box-shadow: var(--gl-shadow-soft);
+  box-shadow: var(--gl-shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .gl-btn-primary:hover:not(:disabled) {
   background: var(--gl-color-accent-hover);
   border-color: var(--gl-color-accent-hover);
-  box-shadow: var(--gl-shadow-md);
-  transform: translateY(-1px);
+  box-shadow: var(--gl-shadow-md), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px) scale(1.01);
 }
 
 .gl-btn-primary:active:not(:disabled) {
-  transform: translateY(0);
-  box-shadow: var(--gl-shadow-soft);
+  background: var(--gl-color-accent-active);
+  border-color: var(--gl-color-accent-active);
+  transform: translateY(0) scale(0.99);
+  box-shadow: var(--gl-shadow-soft), inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .gl-btn-subtle {
   background: var(--gl-color-surface);
-  backdrop-filter: blur(var(--gl-blur-surface));
-  -webkit-backdrop-filter: blur(var(--gl-blur-surface));
+  backdrop-filter: blur(var(--gl-blur-control)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--gl-blur-control)) saturate(180%);
   border-color: var(--gl-color-border);
   color: var(--gl-color-text);
-  box-shadow: var(--gl-shadow-soft);
+  box-shadow: var(--gl-shadow-soft), var(--gl-shadow-inner);
 }
 
 .gl-btn-subtle:hover:not(:disabled) {
-  background: var(--gl-color-hover);
+  background: var(--gl-color-surface-strong);
   border-color: var(--gl-color-border-strong);
+  transform: translateY(-1px) scale(1.01);
 }
 
 .gl-btn-subtle:active:not(:disabled) {
-  background: var(--gl-color-active);
+  background: var(--gl-color-hover);
+  transform: translateY(0) scale(0.99);
 }
 
 .gl-btn-ghost {
@@ -93,27 +101,45 @@
 
 .gl-btn-ghost:hover:not(:disabled) {
   background: var(--gl-color-hover);
+  border-color: var(--gl-color-border);
 }
 
 .gl-btn-ghost:active:not(:disabled) {
   background: var(--gl-color-active);
+  transform: scale(0.98);
 }
 
 /* Icon Only */
 .gl-btn-icon-sm {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
   padding: 0;
 }
 
 .gl-btn-icon-md {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
   padding: 0;
 }
 
 .gl-btn-icon-lg {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
   padding: 0;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .gl-btn-sm {
+    height: 40px;
+    min-height: 40px;
+  }
+
+  .gl-btn-md {
+    height: 48px;
+    min-height: 48px;
+  }
 }

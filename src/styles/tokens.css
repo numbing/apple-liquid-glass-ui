@@ -1,120 +1,204 @@
-/* glass-ui Design Tokens */
+/* glass-ui Design Tokens - Apple Glass Style */
 
 :root {
-  /* Colors - Light Theme */
-  --gl-color-bg: #f5f5f7;
-  --gl-color-surface: rgba(255, 255, 255, 0.7);
-  --gl-color-surface-solid: #ffffff;
-  --gl-color-border: rgba(0, 0, 0, 0.08);
-  --gl-color-border-strong: rgba(0, 0, 0, 0.12);
-  --gl-color-text: #1d1d1f;
-  --gl-color-text-secondary: #86868b;
-  --gl-color-text-tertiary: #aeaeb2;
+  /* Background - Layered depth */
+  --gl-color-bg: linear-gradient(135deg, #e8f0fa 0%, #f5f7fa 100%);
+  --gl-color-bg-elevated: linear-gradient(135deg, #f0f4f9 0%, #fafbfc 100%);
 
-  /* Accent Colors */
+  /* Glass Surfaces - Translucent with blur */
+  --gl-color-surface: rgba(255, 255, 255, 0.72);
+  --gl-color-surface-strong: rgba(255, 255, 255, 0.85);
+  --gl-color-surface-elevated: rgba(255, 255, 255, 0.88);
+  --gl-color-surface-nav: rgba(255, 255, 255, 0.78);
+
+  /* Borders - Subtle glass edges */
+  --gl-color-border-subtle: rgba(255, 255, 255, 0.18);
+  --gl-color-border: rgba(0, 0, 0, 0.06);
+  --gl-color-border-strong: rgba(0, 0, 0, 0.09);
+  --gl-color-border-focus: rgba(0, 122, 255, 0.4);
+
+  /* Text - Crisp hierarchy */
+  --gl-color-text: #1d1d1f;
+  --gl-color-text-muted: #6e6e73;
+  --gl-color-text-subtle: #86868b;
+  --gl-color-text-inverted: #ffffff;
+
+  /* Accent - Apple-inspired blue */
   --gl-color-accent: #007aff;
+  --gl-color-accent-soft: rgba(0, 122, 255, 0.12);
   --gl-color-accent-hover: #0051d5;
+  --gl-color-accent-active: #004bb8;
   --gl-color-accent-text: #ffffff;
 
   /* Semantic Colors */
   --gl-color-success: #34c759;
+  --gl-color-success-soft: rgba(52, 199, 89, 0.12);
   --gl-color-warning: #ff9500;
+  --gl-color-warning-soft: rgba(255, 149, 0, 0.12);
   --gl-color-error: #ff3b30;
+  --gl-color-error-soft: rgba(255, 59, 48, 0.12);
   --gl-color-info: #5ac8fa;
+  --gl-color-info-soft: rgba(90, 200, 250, 0.12);
 
-  /* Surface Overlays */
-  --gl-color-overlay: rgba(0, 0, 0, 0.4);
+  /* Interactive States */
+  --gl-color-overlay: rgba(0, 0, 0, 0.35);
   --gl-color-hover: rgba(0, 0, 0, 0.04);
   --gl-color-active: rgba(0, 0, 0, 0.08);
+  --gl-color-hover-inverted: rgba(255, 255, 255, 0.12);
+  --gl-color-active-inverted: rgba(255, 255, 255, 0.18);
 
-  /* Blur */
-  --gl-blur-surface: 40px;
-  --gl-blur-sheet: 60px;
-  --gl-blur-tooltip: 20px;
+  /* Blur - Glassmorphism effect */
+  --gl-blur-surface: 48px;
+  --gl-blur-nav: 52px;
+  --gl-blur-sheet: 64px;
+  --gl-blur-tooltip: 24px;
+  --gl-blur-control: 32px;
 
-  /* Border Radius */
-  --gl-radius-xs: 4px;
-  --gl-radius-sm: 8px;
-  --gl-radius-md: 12px;
-  --gl-radius-lg: 16px;
-  --gl-radius-xl: 20px;
+  /* Border Radius - Larger, softer */
+  --gl-radius-xs: 6px;
+  --gl-radius-sm: 10px;
+  --gl-radius-md: 14px;
+  --gl-radius-lg: 20px;
+  --gl-radius-xl: 28px;
+  --gl-radius-2xl: 36px;
   --gl-radius-full: 9999px;
 
-  /* Shadows */
-  --gl-shadow-soft: 0 2px 16px rgba(0, 0, 0, 0.08);
-  --gl-shadow-md: 0 4px 24px rgba(0, 0, 0, 0.12);
-  --gl-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
-  --gl-shadow-focus: 0 0 0 4px rgba(0, 122, 255, 0.25);
+  /* Shadows - Soft, layered depth */
+  --gl-shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.04),
+                    0 0.5px 2px rgba(0, 0, 0, 0.06);
+  --gl-shadow-md: 0 4px 20px rgba(0, 0, 0, 0.06),
+                  0 1px 4px rgba(0, 0, 0, 0.08);
+  --gl-shadow-elevated: 0 8px 32px rgba(0, 0, 0, 0.08),
+                        0 2px 8px rgba(0, 0, 0, 0.1);
+  --gl-shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.12),
+                  0 4px 12px rgba(0, 0, 0, 0.14);
+  --gl-shadow-focus: 0 0 0 4px rgba(0, 122, 255, 0.24);
+  --gl-shadow-inner: inset 0 0.5px 1px rgba(255, 255, 255, 0.6),
+                     inset 0 -0.5px 1px rgba(0, 0, 0, 0.04);
 
-  /* Spacing */
-  --gl-space-xs: 4px;
-  --gl-space-sm: 8px;
+  /* Spacing - Generous breathing room */
+  --gl-space-xs: 6px;
+  --gl-space-sm: 10px;
   --gl-space-md: 16px;
   --gl-space-lg: 24px;
   --gl-space-xl: 32px;
   --gl-space-2xl: 48px;
+  --gl-space-3xl: 64px;
 
-  /* Typography */
-  --gl-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  --gl-font-size-xs: 12px;
-  --gl-font-size-sm: 14px;
-  --gl-font-size-md: 16px;
-  --gl-font-size-lg: 18px;
-  --gl-font-size-xl: 24px;
-  --gl-font-size-2xl: 32px;
-  --gl-font-size-3xl: 48px;
+  /* Typography - SF Pro inspired */
+  --gl-font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', system-ui, sans-serif;
+  --gl-font-size-xs: 11px;
+  --gl-font-size-sm: 13px;
+  --gl-font-size-md: 15px;
+  --gl-font-size-lg: 17px;
+  --gl-font-size-xl: 22px;
+  --gl-font-size-2xl: 28px;
+  --gl-font-size-3xl: 40px;
+  --gl-font-size-4xl: 56px;
 
   --gl-font-weight-regular: 400;
   --gl-font-weight-medium: 500;
   --gl-font-weight-semibold: 600;
   --gl-font-weight-bold: 700;
 
-  --gl-line-height-tight: 1.2;
+  --gl-line-height-tight: 1.15;
+  --gl-line-height-snug: 1.3;
   --gl-line-height-normal: 1.5;
   --gl-line-height-relaxed: 1.7;
 
-  /* Transitions */
-  --gl-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-  --gl-transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --gl-transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --gl-letter-spacing-tight: -0.02em;
+  --gl-letter-spacing-normal: 0;
+  --gl-letter-spacing-wide: 0.01em;
 
-  /* Z-Index */
+  /* Transitions - Smooth, Apple-like */
+  --gl-transition-fast: 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  --gl-transition-base: 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  --gl-transition-slow: 380ms cubic-bezier(0.4, 0, 0.2, 1);
+  --gl-transition-bounce: 420ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Z-Index - Layering */
+  --gl-z-base: 0;
   --gl-z-dropdown: 1000;
+  --gl-z-sticky: 1100;
+  --gl-z-nav: 1200;
   --gl-z-tooltip: 2000;
   --gl-z-sheet: 3000;
   --gl-z-modal: 4000;
+
+  /* Navigation specific */
+  --gl-nav-height: 60px;
+  --gl-nav-height-mobile: 56px;
+  --gl-bottom-nav-height: 64px;
 }
 
 [data-gl-theme="dark"] {
-  /* Colors - Dark Theme */
-  --gl-color-bg: #000000;
-  --gl-color-surface: rgba(255, 255, 255, 0.08);
-  --gl-color-surface-solid: #1c1c1e;
+  /* Background - Deep gradient */
+  --gl-color-bg: linear-gradient(135deg, #0a0a0a 0%, #1a1a1c 100%);
+  --gl-color-bg-elevated: linear-gradient(135deg, #1c1c1e 0%, #2a2a2c 100%);
+
+  /* Glass Surfaces - Translucent dark */
+  --gl-color-surface: rgba(30, 30, 32, 0.78);
+  --gl-color-surface-strong: rgba(40, 40, 42, 0.88);
+  --gl-color-surface-elevated: rgba(50, 50, 52, 0.92);
+  --gl-color-surface-nav: rgba(28, 28, 30, 0.85);
+
+  /* Borders - Lighter in dark mode */
+  --gl-color-border-subtle: rgba(255, 255, 255, 0.08);
   --gl-color-border: rgba(255, 255, 255, 0.12);
   --gl-color-border-strong: rgba(255, 255, 255, 0.18);
-  --gl-color-text: #f5f5f7;
-  --gl-color-text-secondary: #98989d;
-  --gl-color-text-tertiary: #636366;
+  --gl-color-border-focus: rgba(10, 132, 255, 0.5);
 
-  /* Accent Colors */
+  /* Text - Inverted hierarchy */
+  --gl-color-text: #f5f5f7;
+  --gl-color-text-muted: #98989d;
+  --gl-color-text-subtle: #636366;
+  --gl-color-text-inverted: #1d1d1f;
+
+  /* Accent - Brighter blue for dark */
   --gl-color-accent: #0a84ff;
+  --gl-color-accent-soft: rgba(10, 132, 255, 0.15);
   --gl-color-accent-hover: #409cff;
+  --gl-color-accent-active: #66b0ff;
   --gl-color-accent-text: #ffffff;
 
-  /* Semantic Colors */
+  /* Semantic Colors - Vibrant */
   --gl-color-success: #32d74b;
+  --gl-color-success-soft: rgba(50, 215, 75, 0.15);
   --gl-color-warning: #ff9f0a;
+  --gl-color-warning-soft: rgba(255, 159, 10, 0.15);
   --gl-color-error: #ff453a;
+  --gl-color-error-soft: rgba(255, 69, 58, 0.15);
   --gl-color-info: #64d2ff;
+  --gl-color-info-soft: rgba(100, 210, 255, 0.15);
 
-  /* Surface Overlays */
-  --gl-color-overlay: rgba(0, 0, 0, 0.7);
+  /* Interactive States */
+  --gl-color-overlay: rgba(0, 0, 0, 0.65);
   --gl-color-hover: rgba(255, 255, 255, 0.08);
-  --gl-color-active: rgba(255, 255, 255, 0.12);
+  --gl-color-active: rgba(255, 255, 255, 0.14);
+  --gl-color-hover-inverted: rgba(0, 0, 0, 0.12);
+  --gl-color-active-inverted: rgba(0, 0, 0, 0.18);
 
-  /* Shadows */
-  --gl-shadow-soft: 0 2px 16px rgba(0, 0, 0, 0.4);
-  --gl-shadow-md: 0 4px 24px rgba(0, 0, 0, 0.5);
-  --gl-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
-  --gl-shadow-focus: 0 0 0 4px rgba(10, 132, 255, 0.35);
+  /* Shadows - Deeper for dark mode */
+  --gl-shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.24),
+                    0 0.5px 2px rgba(0, 0, 0, 0.4);
+  --gl-shadow-md: 0 4px 20px rgba(0, 0, 0, 0.32),
+                  0 1px 4px rgba(0, 0, 0, 0.5);
+  --gl-shadow-elevated: 0 8px 32px rgba(0, 0, 0, 0.4),
+                        0 2px 8px rgba(0, 0, 0, 0.6);
+  --gl-shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.5),
+                  0 4px 12px rgba(0, 0, 0, 0.7);
+  --gl-shadow-focus: 0 0 0 4px rgba(10, 132, 255, 0.32);
+  --gl-shadow-inner: inset 0 0.5px 1px rgba(255, 255, 255, 0.1),
+                     inset 0 -0.5px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive breakpoints */
+@media (max-width: 640px) {
+  :root {
+    --gl-nav-height: var(--gl-nav-height-mobile);
+    --gl-space-lg: 20px;
+    --gl-space-xl: 28px;
+    --gl-font-size-3xl: 32px;
+    --gl-font-size-4xl: 40px;
+  }
 }
