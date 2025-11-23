@@ -1,0 +1,103 @@
+/* Avatar Component Styles */
+
+.gl-avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gl-color-surface);
+  backdrop-filter: blur(var(--gl-blur-surface));
+  -webkit-backdrop-filter: blur(var(--gl-blur-surface));
+  border: 1px solid var(--gl-color-border);
+  border-radius: var(--gl-radius-full);
+  overflow: hidden;
+  flex-shrink: 0;
+  user-select: none;
+  font-weight: var(--gl-font-weight-medium);
+  color: var(--gl-color-text);
+}
+
+.gl-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Sizes */
+.gl-avatar-xs {
+  width: 24px;
+  height: 24px;
+  font-size: var(--gl-font-size-xs);
+}
+
+.gl-avatar-sm {
+  width: 32px;
+  height: 32px;
+  font-size: var(--gl-font-size-sm);
+}
+
+.gl-avatar-md {
+  width: 40px;
+  height: 40px;
+  font-size: var(--gl-font-size-md);
+}
+
+.gl-avatar-lg {
+  width: 48px;
+  height: 48px;
+  font-size: var(--gl-font-size-lg);
+}
+
+.gl-avatar-xl {
+  width: 64px;
+  height: 64px;
+  font-size: var(--gl-font-size-xl);
+}
+
+/* Status indicator */
+.gl-avatar-status {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 25%;
+  height: 25%;
+  border-radius: var(--gl-radius-full);
+  border: 2px solid var(--gl-color-bg);
+}
+
+.gl-avatar-status-online {
+  background: var(--gl-color-success);
+}
+
+.gl-avatar-status-offline {
+  background: var(--gl-color-text-tertiary);
+}
+
+.gl-avatar-status-busy {
+  background: var(--gl-color-error);
+}
+
+.gl-avatar-status-away {
+  background: var(--gl-color-warning);
+}
+
+/* Avatar Group */
+.gl-avatar-group {
+  display: inline-flex;
+  align-items: center;
+}
+
+.gl-avatar-group .gl-avatar {
+  margin-left: -8px;
+  border: 2px solid var(--gl-color-bg);
+}
+
+.gl-avatar-group .gl-avatar:first-child {
+  margin-left: 0;
+}
+
+.gl-avatar-group .gl-avatar:hover {
+  z-index: 1;
+  transform: translateY(-2px);
+  transition: transform var(--gl-transition-fast);
+}

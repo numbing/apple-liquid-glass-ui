@@ -1,0 +1,87 @@
+/* Card Component Styles */
+
+.gl-card {
+  background: var(--gl-color-surface);
+  backdrop-filter: blur(var(--gl-blur-surface));
+  -webkit-backdrop-filter: blur(var(--gl-blur-surface));
+  border: 1px solid var(--gl-color-border);
+  border-radius: var(--gl-radius-lg);
+  box-shadow: var(--gl-shadow-soft);
+  overflow: hidden;
+  transition: all var(--gl-transition-base);
+}
+
+.gl-card-interactive {
+  cursor: pointer;
+}
+
+.gl-card-interactive:hover {
+  box-shadow: var(--gl-shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--gl-color-border-strong);
+}
+
+.gl-card-interactive:active {
+  transform: translateY(0);
+  box-shadow: var(--gl-shadow-soft);
+}
+
+/* Variants */
+.gl-card-flat {
+  box-shadow: none;
+}
+
+.gl-card-elevated {
+  box-shadow: var(--gl-shadow-md);
+}
+
+/* Padding */
+.gl-card-sm {
+  padding: var(--gl-space-md);
+}
+
+.gl-card-md {
+  padding: var(--gl-space-lg);
+}
+
+.gl-card-lg {
+  padding: var(--gl-space-xl);
+}
+
+/* Card Header */
+.gl-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gl-space-md);
+  padding: var(--gl-space-lg);
+  border-bottom: 1px solid var(--gl-color-border);
+}
+
+.gl-card-header-title {
+  font-size: var(--gl-font-size-lg);
+  font-weight: var(--gl-font-weight-semibold);
+  color: var(--gl-color-text);
+  margin: 0;
+}
+
+.gl-card-header-description {
+  font-size: var(--gl-font-size-sm);
+  color: var(--gl-color-text-secondary);
+  margin: var(--gl-space-xs) 0 0;
+}
+
+/* Card Body */
+.gl-card-body {
+  padding: var(--gl-space-lg);
+}
+
+/* Card Footer */
+.gl-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--gl-space-md);
+  padding: var(--gl-space-lg);
+  border-top: 1px solid var(--gl-color-border);
+}

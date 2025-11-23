@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" data-gl-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>glass-ui Classname Demo</title>
+  <link rel="stylesheet" href="../dist/index.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--gl-color-bg);
+    }
+  </style>
+</head>
+<body class="gl-base">
+  <div class="gl-container gl-container-xl" style="padding-top: 2rem; padding-bottom: 2rem;">
+    <div class="gl-stack gl-stack-gap-2xl">
+
+      <!-- Header -->
+      <div>
+        <h1 class="gl-heading gl-h1">glass-ui Classname Demo</h1>
+        <p class="gl-text gl-text-lg gl-text-secondary">
+          Using glass-ui with pure HTML and CSS classes
+        </p>
+      </div>
+
+      <hr class="gl-divider" />
+
+      <!-- Buttons -->
+      <div class="gl-card gl-card-md">
+        <div class="gl-card-header">
+          <div>
+            <h3 class="gl-card-header-title">Buttons</h3>
+            <p class="gl-card-header-description">Primary, subtle, and ghost variants</p>
+          </div>
+        </div>
+        <div class="gl-card-body">
+          <div class="gl-stack gl-stack-gap-md">
+            <div class="gl-flex gl-gap-md">
+              <button class="gl-btn gl-btn-primary gl-btn-sm">Primary Small</button>
+              <button class="gl-btn gl-btn-primary gl-btn-md">Primary Medium</button>
+              <button class="gl-btn gl-btn-primary gl-btn-lg">Primary Large</button>
+            </div>
+            <div class="gl-flex gl-gap-md">
+              <button class="gl-btn gl-btn-subtle gl-btn-md">Subtle</button>
+              <button class="gl-btn gl-btn-ghost gl-btn-md">Ghost</button>
+              <button class="gl-btn gl-btn-primary gl-btn-md" disabled>Disabled</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Inputs -->
+      <div class="gl-card gl-card-md">
+        <div class="gl-card-header">
+          <div>
+            <h3 class="gl-card-header-title">Inputs</h3>
+            <p class="gl-card-header-description">Text inputs and textareas</p>
+          </div>
+        </div>
+        <div class="gl-card-body">
+          <div class="gl-stack gl-stack-gap-lg">
+            <div class="gl-input-group">
+              <label class="gl-input-label">Email <span style="color: var(--gl-color-error)"> *</span></label>
+              <input type="email" class="gl-input gl-input-md" placeholder="Enter your email" />
+              <span class="gl-input-hint">We'll never share your email</span>
+            </div>
+            <div class="gl-input-group">
+              <label class="gl-input-label">Password <span style="color: var(--gl-color-error)"> *</span></label>
+              <input type="password" class="gl-input gl-input-md" placeholder="Enter password" />
+            </div>
+            <div class="gl-input-group">
+              <label class="gl-input-label">Message</label>
+              <input class="gl-input gl-input-md gl-input-invalid" placeholder="Enter a message" />
+              <span class="gl-input-error">This field is required</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Controls -->
+      <div class="gl-card gl-card-md">
+        <div class="gl-card-header">
+          <div>
+            <h3 class="gl-card-header-title">Form Controls</h3>
+            <p class="gl-card-header-description">Checkboxes, radios, and switches</p>
+          </div>
+        </div>
+        <div class="gl-card-body">
+          <div class="gl-stack gl-stack-gap-lg">
+            <div class="gl-stack gl-stack-gap-md">
+              <label class="gl-checkbox-wrapper">
+                <input type="checkbox" class="gl-checkbox-input" />
+                <span class="gl-checkbox-box"></span>
+                <span class="gl-checkbox-label">Accept terms and conditions</span>
+              </label>
+              <label class="gl-checkbox-wrapper">
+                <input type="checkbox" class="gl-checkbox-input" />
+                <span class="gl-checkbox-box"></span>
+                <span class="gl-checkbox-label">Subscribe to newsletter</span>
+              </label>
+            </div>
+
+            <div class="gl-stack gl-stack-gap-md">
+              <label class="gl-radio-wrapper">
+                <input type="radio" name="plan" class="gl-radio-input" value="free" />
+                <span class="gl-radio-circle"></span>
+                <span class="gl-radio-label">Free plan</span>
+              </label>
+              <label class="gl-radio-wrapper">
+                <input type="radio" name="plan" class="gl-radio-input" value="pro" />
+                <span class="gl-radio-circle"></span>
+                <span class="gl-radio-label">Pro plan</span>
+              </label>
+            </div>
+
+            <div class="gl-stack gl-stack-gap-md">
+              <label class="gl-switch-wrapper">
+                <input type="checkbox" class="gl-switch-input" />
+                <span class="gl-switch-track"></span>
+                <span class="gl-switch-label">Enable notifications</span>
+              </label>
+              <label class="gl-switch-wrapper">
+                <input type="checkbox" class="gl-switch-input" />
+                <span class="gl-switch-track"></span>
+                <span class="gl-switch-label">Auto-save changes</span>
+              </label>
+            </div>
+
+            <div class="gl-select-container">
+              <select class="gl-select gl-select-md">
+                <option value="">Select an option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Badges and Avatars -->
+      <div class="gl-card gl-card-md">
+        <div class="gl-card-header">
+          <div>
+            <h3 class="gl-card-header-title">Badges & Avatars</h3>
+          </div>
+        </div>
+        <div class="gl-card-body">
+          <div class="gl-stack gl-stack-gap-lg">
+            <div class="gl-flex gl-gap-md">
+              <span class="gl-badge gl-badge-default gl-badge-md">Default</span>
+              <span class="gl-badge gl-badge-primary gl-badge-md">Primary</span>
+              <span class="gl-badge gl-badge-success gl-badge-md">Success</span>
+              <span class="gl-badge gl-badge-warning gl-badge-md">Warning</span>
+              <span class="gl-badge gl-badge-error gl-badge-md">Error</span>
+              <span class="gl-badge gl-badge-info gl-badge-md">Info</span>
+            </div>
+
+            <div class="gl-flex gl-gap-md">
+              <div class="gl-avatar gl-avatar-md">
+                <span>JD</span>
+                <span class="gl-avatar-status gl-avatar-status-online"></span>
+              </div>
+              <div class="gl-avatar gl-avatar-md">
+                <span>AS</span>
+                <span class="gl-avatar-status gl-avatar-status-busy"></span>
+              </div>
+              <div class="gl-avatar gl-avatar-md">
+                <span>BK</span>
+                <span class="gl-avatar-status gl-avatar-status-away"></span>
+              </div>
+            </div>
+
+            <div class="gl-avatar-group">
+              <div class="gl-avatar gl-avatar-md"><span>JD</span></div>
+              <div class="gl-avatar gl-avatar-md"><span>AS</span></div>
+              <div class="gl-avatar gl-avatar-md"><span>BK</span></div>
+              <div class="gl-avatar gl-avatar-md"><span>MR</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Typography -->
+      <div class="gl-card gl-card-md">
+        <div class="gl-card-header">
+          <div>
+            <h3 class="gl-card-header-title">Typography</h3>
+          </div>
+        </div>
+        <div class="gl-card-body">
+          <div class="gl-stack gl-stack-gap-md">
+            <h2 class="gl-heading gl-h2">Heading Level 2</h2>
+            <h3 class="gl-heading gl-h3">Heading Level 3</h3>
+            <p class="gl-text gl-text-lg gl-text-primary">Large primary text</p>
+            <p class="gl-text gl-text-md gl-text-secondary">Medium secondary text</p>
+            <p class="gl-text gl-text-sm gl-text-tertiary">Small tertiary text</p>
+            <div><code class="gl-code">const example = 'code snippet';</code></div>
+            <div><a href="#" class="gl-link">This is a link</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid Layout -->
+      <div class="gl-card gl-card-md">
+        <div class="gl-card-header">
+          <div>
+            <h3 class="gl-card-header-title">Grid Layout</h3>
+          </div>
+        </div>
+        <div class="gl-card-body">
+          <div class="gl-grid gl-grid-cols-3 gl-grid-gap-md">
+            <div class="gl-glass gl-rounded-md gl-p-lg gl-border">
+              <p class="gl-text gl-text-md gl-text-semibold">Grid Item 1</p>
+            </div>
+            <div class="gl-glass gl-rounded-md gl-p-lg gl-border">
+              <p class="gl-text gl-text-md gl-text-semibold">Grid Item 2</p>
+            </div>
+            <div class="gl-glass gl-rounded-md gl-p-lg gl-border">
+              <p class="gl-text gl-text-md gl-text-semibold">Grid Item 3</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Theme Toggle -->
+      <div class="gl-card gl-card-md">
+        <div class="gl-card-header">
+          <div>
+            <h3 class="gl-card-header-title">Theme Toggle</h3>
+          </div>
+        </div>
+        <div class="gl-card-body">
+          <button class="gl-btn gl-btn-primary gl-btn-md" onclick="toggleTheme()">
+            Toggle Dark/Light Theme
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-gl-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-gl-theme', newTheme);
+    }
+  </script>
+</body>
+</html>

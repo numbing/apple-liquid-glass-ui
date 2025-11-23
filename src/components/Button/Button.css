@@ -1,0 +1,119 @@
+/* Button Component Styles */
+
+.gl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gl-space-sm);
+  font-family: var(--gl-font-family);
+  font-weight: var(--gl-font-weight-medium);
+  border: 1px solid var(--gl-color-border);
+  cursor: pointer;
+  transition: all var(--gl-transition-fast);
+  outline: none;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.gl-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.gl-btn:focus-visible {
+  box-shadow: var(--gl-shadow-focus);
+}
+
+/* Sizes */
+.gl-btn-sm {
+  height: 32px;
+  padding: 0 var(--gl-space-md);
+  font-size: var(--gl-font-size-sm);
+  border-radius: var(--gl-radius-sm);
+}
+
+.gl-btn-md {
+  height: 40px;
+  padding: 0 var(--gl-space-lg);
+  font-size: var(--gl-font-size-md);
+  border-radius: var(--gl-radius-md);
+}
+
+.gl-btn-lg {
+  height: 48px;
+  padding: 0 var(--gl-space-xl);
+  font-size: var(--gl-font-size-lg);
+  border-radius: var(--gl-radius-lg);
+}
+
+/* Variants */
+.gl-btn-primary {
+  background: var(--gl-color-accent);
+  border-color: var(--gl-color-accent);
+  color: var(--gl-color-accent-text);
+  box-shadow: var(--gl-shadow-soft);
+}
+
+.gl-btn-primary:hover:not(:disabled) {
+  background: var(--gl-color-accent-hover);
+  border-color: var(--gl-color-accent-hover);
+  box-shadow: var(--gl-shadow-md);
+  transform: translateY(-1px);
+}
+
+.gl-btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: var(--gl-shadow-soft);
+}
+
+.gl-btn-subtle {
+  background: var(--gl-color-surface);
+  backdrop-filter: blur(var(--gl-blur-surface));
+  -webkit-backdrop-filter: blur(var(--gl-blur-surface));
+  border-color: var(--gl-color-border);
+  color: var(--gl-color-text);
+  box-shadow: var(--gl-shadow-soft);
+}
+
+.gl-btn-subtle:hover:not(:disabled) {
+  background: var(--gl-color-hover);
+  border-color: var(--gl-color-border-strong);
+}
+
+.gl-btn-subtle:active:not(:disabled) {
+  background: var(--gl-color-active);
+}
+
+.gl-btn-ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--gl-color-text);
+  box-shadow: none;
+}
+
+.gl-btn-ghost:hover:not(:disabled) {
+  background: var(--gl-color-hover);
+}
+
+.gl-btn-ghost:active:not(:disabled) {
+  background: var(--gl-color-active);
+}
+
+/* Icon Only */
+.gl-btn-icon-sm {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+
+.gl-btn-icon-md {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+
+.gl-btn-icon-lg {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+}

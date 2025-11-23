@@ -1,0 +1,91 @@
+/* Badge Component Styles */
+
+.gl-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--gl-font-family);
+  font-weight: var(--gl-font-weight-medium);
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* Sizes */
+.gl-badge-sm {
+  height: 20px;
+  padding: 0 var(--gl-space-sm);
+  font-size: var(--gl-font-size-xs);
+  border-radius: var(--gl-radius-xs);
+}
+
+.gl-badge-md {
+  height: 24px;
+  padding: 0 var(--gl-space-md);
+  font-size: var(--gl-font-size-sm);
+  border-radius: var(--gl-radius-sm);
+}
+
+.gl-badge-lg {
+  height: 28px;
+  padding: 0 var(--gl-space-lg);
+  font-size: var(--gl-font-size-md);
+  border-radius: var(--gl-radius-md);
+}
+
+/* Variants */
+.gl-badge-default {
+  background: var(--gl-color-surface);
+  backdrop-filter: blur(var(--gl-blur-surface));
+  -webkit-backdrop-filter: blur(var(--gl-blur-surface));
+  border: 1px solid var(--gl-color-border);
+  color: var(--gl-color-text);
+}
+
+.gl-badge-primary {
+  background: var(--gl-color-accent);
+  border: 1px solid var(--gl-color-accent);
+  color: var(--gl-color-accent-text);
+}
+
+.gl-badge-success {
+  background: var(--gl-color-success);
+  border: 1px solid var(--gl-color-success);
+  color: white;
+}
+
+.gl-badge-warning {
+  background: var(--gl-color-warning);
+  border: 1px solid var(--gl-color-warning);
+  color: white;
+}
+
+.gl-badge-error {
+  background: var(--gl-color-error);
+  border: 1px solid var(--gl-color-error);
+  color: white;
+}
+
+.gl-badge-info {
+  background: var(--gl-color-info);
+  border: 1px solid var(--gl-color-info);
+  color: white;
+}
+
+/* Dot variant */
+.gl-badge-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: var(--gl-radius-full);
+  border: none;
+}
+
+.gl-badge-dot-sm {
+  width: 6px;
+  height: 6px;
+}
+
+.gl-badge-dot-lg {
+  width: 10px;
+  height: 10px;
+}

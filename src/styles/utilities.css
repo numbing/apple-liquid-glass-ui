@@ -1,0 +1,166 @@
+/* glass-ui Utility Classes */
+
+@import './tokens.css';
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+.gl-base {
+  font-family: var(--gl-font-family);
+  color: var(--gl-color-text);
+  background: var(--gl-color-bg);
+  line-height: var(--gl-line-height-normal);
+}
+
+/* Glass Surface */
+.gl-glass {
+  background: var(--gl-color-surface);
+  backdrop-filter: blur(var(--gl-blur-surface));
+  -webkit-backdrop-filter: blur(var(--gl-blur-surface));
+}
+
+.gl-glass-strong {
+  background: var(--gl-color-surface);
+  backdrop-filter: blur(var(--gl-blur-sheet));
+  -webkit-backdrop-filter: blur(var(--gl-blur-sheet));
+}
+
+.gl-glass-subtle {
+  background: var(--gl-color-surface);
+  backdrop-filter: blur(var(--gl-blur-tooltip));
+  -webkit-backdrop-filter: blur(var(--gl-blur-tooltip));
+}
+
+/* Border Radius */
+.gl-rounded-xs { border-radius: var(--gl-radius-xs); }
+.gl-rounded-sm { border-radius: var(--gl-radius-sm); }
+.gl-rounded-md { border-radius: var(--gl-radius-md); }
+.gl-rounded-lg { border-radius: var(--gl-radius-lg); }
+.gl-rounded-xl { border-radius: var(--gl-radius-xl); }
+.gl-rounded-full { border-radius: var(--gl-radius-full); }
+
+/* Shadows */
+.gl-shadow-soft { box-shadow: var(--gl-shadow-soft); }
+.gl-shadow-md { box-shadow: var(--gl-shadow-md); }
+.gl-shadow-lg { box-shadow: var(--gl-shadow-lg); }
+.gl-shadow-none { box-shadow: none; }
+
+/* Borders */
+.gl-border {
+  border: 1px solid var(--gl-color-border);
+}
+
+.gl-border-strong {
+  border: 1px solid var(--gl-color-border-strong);
+}
+
+.gl-border-top { border-top: 1px solid var(--gl-color-border); }
+.gl-border-bottom { border-bottom: 1px solid var(--gl-color-border); }
+.gl-border-left { border-left: 1px solid var(--gl-color-border); }
+.gl-border-right { border-right: 1px solid var(--gl-color-border); }
+
+/* Spacing */
+.gl-p-xs { padding: var(--gl-space-xs); }
+.gl-p-sm { padding: var(--gl-space-sm); }
+.gl-p-md { padding: var(--gl-space-md); }
+.gl-p-lg { padding: var(--gl-space-lg); }
+.gl-p-xl { padding: var(--gl-space-xl); }
+.gl-p-2xl { padding: var(--gl-space-2xl); }
+
+.gl-m-xs { margin: var(--gl-space-xs); }
+.gl-m-sm { margin: var(--gl-space-sm); }
+.gl-m-md { margin: var(--gl-space-md); }
+.gl-m-lg { margin: var(--gl-space-lg); }
+.gl-m-xl { margin: var(--gl-space-xl); }
+.gl-m-2xl { margin: var(--gl-space-2xl); }
+
+/* Typography */
+.gl-text-xs { font-size: var(--gl-font-size-xs); }
+.gl-text-sm { font-size: var(--gl-font-size-sm); }
+.gl-text-md { font-size: var(--gl-font-size-md); }
+.gl-text-lg { font-size: var(--gl-font-size-lg); }
+.gl-text-xl { font-size: var(--gl-font-size-xl); }
+.gl-text-2xl { font-size: var(--gl-font-size-2xl); }
+.gl-text-3xl { font-size: var(--gl-font-size-3xl); }
+
+.gl-text-regular { font-weight: var(--gl-font-weight-regular); }
+.gl-text-medium { font-weight: var(--gl-font-weight-medium); }
+.gl-text-semibold { font-weight: var(--gl-font-weight-semibold); }
+.gl-text-bold { font-weight: var(--gl-font-weight-bold); }
+
+.gl-text-primary { color: var(--gl-color-text); }
+.gl-text-secondary { color: var(--gl-color-text-secondary); }
+.gl-text-tertiary { color: var(--gl-color-text-tertiary); }
+.gl-text-accent { color: var(--gl-color-accent); }
+
+/* Layout */
+.gl-flex {
+  display: flex;
+}
+
+.gl-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.gl-items-center {
+  align-items: center;
+}
+
+.gl-justify-center {
+  justify-content: center;
+}
+
+.gl-justify-between {
+  justify-content: space-between;
+}
+
+.gl-gap-xs { gap: var(--gl-space-xs); }
+.gl-gap-sm { gap: var(--gl-space-sm); }
+.gl-gap-md { gap: var(--gl-space-md); }
+.gl-gap-lg { gap: var(--gl-space-lg); }
+.gl-gap-xl { gap: var(--gl-space-xl); }
+
+/* Transitions */
+.gl-transition {
+  transition: all var(--gl-transition-base);
+}
+
+.gl-transition-fast {
+  transition: all var(--gl-transition-fast);
+}
+
+.gl-transition-slow {
+  transition: all var(--gl-transition-slow);
+}
+
+/* Interactive States */
+.gl-interactive {
+  cursor: pointer;
+  transition: all var(--gl-transition-fast);
+}
+
+.gl-interactive:hover {
+  background: var(--gl-color-hover);
+}
+
+.gl-interactive:active {
+  background: var(--gl-color-active);
+}
+
+.gl-interactive:focus-visible {
+  outline: none;
+  box-shadow: var(--gl-shadow-focus);
+}
+
+/* Overlay */
+.gl-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--gl-color-overlay);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: var(--gl-z-modal);
+}

@@ -1,0 +1,110 @@
+/* Switch/Toggle Component Styles */
+
+.gl-switch-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gl-space-sm);
+  cursor: pointer;
+  user-select: none;
+}
+
+.gl-switch-wrapper.gl-switch-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Hidden native input */
+.gl-switch-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Switch track */
+.gl-switch-track {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background: var(--gl-color-surface);
+  backdrop-filter: blur(var(--gl-blur-surface));
+  -webkit-backdrop-filter: blur(var(--gl-blur-surface));
+  border: 1px solid var(--gl-color-border);
+  border-radius: var(--gl-radius-full);
+  transition: all var(--gl-transition-base);
+  flex-shrink: 0;
+}
+
+.gl-switch-input:hover:not(:disabled) + .gl-switch-track {
+  border-color: var(--gl-color-border-strong);
+}
+
+.gl-switch-input:checked + .gl-switch-track {
+  background: var(--gl-color-accent);
+  border-color: var(--gl-color-accent);
+}
+
+.gl-switch-input:focus + .gl-switch-track {
+  box-shadow: var(--gl-shadow-focus);
+}
+
+/* Switch thumb */
+.gl-switch-track::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: var(--gl-radius-full);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform var(--gl-transition-base);
+}
+
+.gl-switch-input:checked + .gl-switch-track::after {
+  transform: translateX(20px);
+}
+
+/* Label */
+.gl-switch-label {
+  font-size: var(--gl-font-size-md);
+  color: var(--gl-color-text);
+}
+
+/* Sizes */
+.gl-switch-wrapper-sm .gl-switch-track {
+  width: 36px;
+  height: 20px;
+}
+
+.gl-switch-wrapper-sm .gl-switch-track::after {
+  width: 14px;
+  height: 14px;
+}
+
+.gl-switch-wrapper-sm .gl-switch-input:checked + .gl-switch-track::after {
+  transform: translateX(16px);
+}
+
+.gl-switch-wrapper-sm .gl-switch-label {
+  font-size: var(--gl-font-size-sm);
+}
+
+.gl-switch-wrapper-lg .gl-switch-track {
+  width: 52px;
+  height: 28px;
+}
+
+.gl-switch-wrapper-lg .gl-switch-track::after {
+  width: 22px;
+  height: 22px;
+}
+
+.gl-switch-wrapper-lg .gl-switch-input:checked + .gl-switch-track::after {
+  transform: translateX(24px);
+}
+
+.gl-switch-wrapper-lg .gl-switch-label {
+  font-size: var(--gl-font-size-lg);
+}
