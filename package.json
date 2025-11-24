@@ -77,10 +77,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/numbing/glass-ui"
+    "url": "https://github.com/numbing/apple-liquid-glass-ui"
   },
   "bugs": {
-    "url": "https://github.com/numbing/glass-ui/issues"
+    "url": "https://github.com/numbing/apple-liquid-glass-ui/issues"
   },
   "homepage": "https://glass-ui-eight.vercel.app"
 }
