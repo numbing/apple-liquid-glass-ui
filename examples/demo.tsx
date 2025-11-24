@@ -229,7 +229,7 @@ function Demo() {
             <CardBody>
               <Stack gap="lg">
                 <Stack gap="md">
-                  <Checkbox label="Accept terms and conditions" checked={checked} onChange={(e) => setChecked(e.target.checked)} />
+                  <Checkbox label="Accept terms and conditions" checked={checked} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setChecked(e.target.checked)} />
                   <Checkbox label="Subscribe to newsletter" />
                   <Checkbox label="Disabled option" disabled />
                 </Stack>
