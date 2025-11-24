@@ -27,6 +27,7 @@ import {
   Stack,
   Grid,
   Divider,
+  Flex,
   GlassTopNav,
   GlassNavItem,
   GlassBottomNav,
@@ -331,6 +332,46 @@ function Demo() {
           </Card>
 
           {/* Grid Layout */}
+          <Card>
+            <CardHeader title="Flex Layout" description="Flexible box layouts with props" />
+            <CardBody>
+              <Stack gap="lg">
+                <div>
+                  <Text size="sm" weight="semibold" style={{ marginBottom: '0.5rem' }}>
+                    Horizontal with space-between
+                  </Text>
+                  <Flex direction="row" justify="between" align="center" gap="md" className="gl-glass gl-rounded-md gl-p-md gl-border">
+                    <Badge variant="primary">Item 1</Badge>
+                    <Badge variant="info">Item 2</Badge>
+                    <Badge variant="success">Item 3</Badge>
+                  </Flex>
+                </div>
+
+                <div>
+                  <Text size="sm" weight="semibold" style={{ marginBottom: '0.5rem' }}>
+                    Vertical with gap
+                  </Text>
+                  <Flex direction="column" gap="sm" className="gl-glass gl-rounded-md gl-p-md gl-border">
+                    <Button variant="ghost" size="sm">Action 1</Button>
+                    <Button variant="ghost" size="sm">Action 2</Button>
+                    <Button variant="ghost" size="sm">Action 3</Button>
+                  </Flex>
+                </div>
+
+                <div>
+                  <Text size="sm" weight="semibold" style={{ marginBottom: '0.5rem' }}>
+                    Center aligned
+                  </Text>
+                  <Flex justify="center" align="center" gap="md" className="gl-glass gl-rounded-md gl-p-lg gl-border">
+                    <Avatar size="sm" src="https://i.pravatar.cc/150?img=1" />
+                    <Text>Centered Content</Text>
+                    <Badge variant="info">New</Badge>
+                  </Flex>
+                </div>
+              </Stack>
+            </CardBody>
+          </Card>
+
           <Card>
             <CardHeader title="Grid Layout" />
             <CardBody>

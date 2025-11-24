@@ -11,7 +11,7 @@ Perfect for creating modern, elegant UIs with authentic macOS/iOS feel.
 - **Dual API**: Use as React components or standalone CSS classnames
 - **Dark Mode Support**: Seamless light/dark theme switching
 - **Mobile-First**: Touch-friendly with responsive breakpoints
-- **24+ Components**: Complete UI toolkit from buttons to navigation
+- **26+ Components**: Complete UI toolkit from buttons to navigation
 - **TypeScript**: Full type definitions included
 - **Tree-Shakeable**: Import only what you need
 
@@ -248,6 +248,58 @@ import { Checkbox, Radio, Switch } from 'glass-ui';
 </label>
 ```
 
+### DatePicker
+
+Glass-styled calendar date picker with animations:
+
+```tsx
+import { DatePicker } from 'apple-liquid-glass-ui';
+
+const [date, setDate] = useState<Date | undefined>();
+
+// Basic date picker
+<DatePicker
+  label="Select Date"
+  placeholder="Choose a date"
+  value={date}
+  onChange={setDate}
+  size="md"
+/>
+
+// With constraints
+<DatePicker
+  label="Birth Date"
+  placeholder="MM/DD/YYYY"
+  value={birthDate}
+  onChange={setBirthDate}
+  maxDate={new Date()}
+  size="md"
+/>
+
+// Different sizes
+<DatePicker label="Small" size="sm" />
+<DatePicker label="Medium" size="md" />
+<DatePicker label="Large" size="lg" />
+```
+
+**Props:**
+- `value`: Selected date (Date object)
+- `onChange`: Callback with selected date
+- `label`: Optional label text
+- `placeholder`: Input placeholder
+- `minDate`: Minimum selectable date
+- `maxDate`: Maximum selectable date
+- `disabled`: Disable picker
+- `size`: `'sm' | 'md' | 'lg'`
+
+**Features:**
+- Full calendar view with month/year navigation
+- Today button for quick access
+- Min/max date constraints
+- Glass-styled dropdown with blur effects
+- Smooth animations
+- Dark mode support
+
 ### Badge
 
 ```tsx
@@ -306,7 +358,7 @@ import { Tooltip } from 'glass-ui';
 ### Layout
 
 ```tsx
-import { Container, Stack, Grid, Divider, Spacer, Center } from 'apple-liquid-glass-ui';
+import { Container, Stack, Grid, Flex, Divider, Spacer, Center } from 'apple-liquid-glass-ui';
 
 <Container size="lg">
   <Stack gap="lg">
@@ -321,9 +373,29 @@ import { Container, Stack, Grid, Divider, Spacer, Center } from 'apple-liquid-gl
   <div>Grid item 3</div>
 </Grid>
 
+// Flex - Flexible layouts with props
+<Flex direction="row" justify="between" align="center" gap="md">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</Flex>
+
+<Flex direction="column" align="start" gap="sm">
+  <Button variant="ghost">Action 1</Button>
+  <Button variant="ghost">Action 2</Button>
+</Flex>
+
 <Divider />
 <Divider vertical />
 ```
+
+**Flex Props:**
+- `direction`: `'row' | 'column' | 'row-reverse' | 'column-reverse'`
+- `align`: `'start' | 'center' | 'end' | 'stretch' | 'baseline'`
+- `justify`: `'start' | 'center' | 'end' | 'between' | 'around' | 'evenly'`
+- `wrap`: `'nowrap' | 'wrap' | 'wrap-reverse'`
+- `gap`: `'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'`
+- `inline`: Display as inline-flex
 
 **Classname API:**
 
@@ -339,6 +411,12 @@ import { Container, Stack, Grid, Divider, Spacer, Center } from 'apple-liquid-gl
   <div>Grid item 1</div>
   <div>Grid item 2</div>
   <div>Grid item 3</div>
+</div>
+
+<!-- Flex with utility classes -->
+<div class="d-flex justify-content-between align-items-center gap-3">
+  <div>Item 1</div>
+  <div>Item 2</div>
 </div>
 
 <hr class="gl-divider" />

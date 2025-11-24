@@ -1,0 +1,110 @@
+/* Flex - Flexible layout component */
+
+.gl-flex {
+  display: flex;
+}
+
+.gl-inline-flex {
+  display: inline-flex;
+}
+
+/* Direction */
+.gl-flex-direction-row {
+  flex-direction: row;
+}
+
+.gl-flex-direction-column {
+  flex-direction: column;
+}
+
+.gl-flex-direction-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.gl-flex-direction-column-reverse {
+  flex-direction: column-reverse;
+}
+
+/* Align Items */
+.gl-flex-align-start {
+  align-items: flex-start;
+}
+
+.gl-flex-align-center {
+  align-items: center;
+}
+
+.gl-flex-align-end {
+  align-items: flex-end;
+}
+
+.gl-flex-align-stretch {
+  align-items: stretch;
+}
+
+.gl-flex-align-baseline {
+  align-items: baseline;
+}
+
+/* Justify Content */
+.gl-flex-justify-start {
+  justify-content: flex-start;
+}
+
+.gl-flex-justify-center {
+  justify-content: center;
+}
+
+.gl-flex-justify-end {
+  justify-content: flex-end;
+}
+
+.gl-flex-justify-between {
+  justify-content: space-between;
+}
+
+.gl-flex-justify-around {
+  justify-content: space-around;
+}
+
+.gl-flex-justify-evenly {
+  justify-content: space-evenly;
+}
+
+/* Wrap */
+.gl-flex-wrap-nowrap {
+  flex-wrap: nowrap;
+}
+
+.gl-flex-wrap-wrap {
+  flex-wrap: wrap;
+}
+
+.gl-flex-wrap-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+/* Gap */
+.gl-flex-gap-xs {
+  gap: var(--gl-space-xs);
+}
+
+.gl-flex-gap-sm {
+  gap: var(--gl-space-sm);
+}
+
+.gl-flex-gap-md {
+  gap: var(--gl-space-md);
+}
+
+.gl-flex-gap-lg {
+  gap: var(--gl-space-lg);
+}
+
+.gl-flex-gap-xl {
+  gap: var(--gl-space-xl);
+}
+
+.gl-flex-gap-2xl {
+  gap: var(--gl-space-2xl);
+}
