@@ -1,0 +1,298 @@
+/* DatePicker - Glass-styled calendar date picker */
+
+.gl-datepicker-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Label */
+.gl-datepicker-label {
+  display: block;
+  font-size: var(--gl-font-size-sm);
+  font-weight: var(--gl-font-weight-medium);
+  color: var(--gl-color-text);
+  margin-bottom: var(--gl-space-xs);
+}
+
+/* Input Button */
+.gl-datepicker-input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gl-space-sm);
+  padding: var(--gl-space-sm) var(--gl-space-md);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(var(--gl-blur-surface)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--gl-blur-surface)) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--gl-radius-md);
+  font-size: var(--gl-font-size-md);
+  color: var(--gl-color-text);
+  cursor: pointer;
+  transition: all var(--gl-transition-base);
+  text-align: left;
+}
+
+.gl-datepicker-input:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.gl-datepicker-input:focus {
+  outline: none;
+  border-color: var(--gl-color-accent);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.gl-datepicker-input-open {
+  border-color: var(--gl-color-accent);
+}
+
+.gl-datepicker-input-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Input Sizes */
+.gl-datepicker-input-sm {
+  padding: var(--gl-space-xs) var(--gl-space-sm);
+  font-size: var(--gl-font-size-sm);
+}
+
+.gl-datepicker-input-lg {
+  padding: var(--gl-space-md) var(--gl-space-lg);
+  font-size: var(--gl-font-size-lg);
+}
+
+.gl-datepicker-value {
+  color: var(--gl-color-text);
+}
+
+.gl-datepicker-placeholder {
+  color: var(--gl-color-text-muted);
+}
+
+.gl-datepicker-icon {
+  flex-shrink: 0;
+  color: var(--gl-color-text-secondary);
+  transition: color var(--gl-transition-base);
+}
+
+.gl-datepicker-input:hover:not(:disabled) .gl-datepicker-icon {
+  color: var(--gl-color-text);
+}
+
+/* Dropdown */
+.gl-datepicker-dropdown {
+  position: absolute;
+  top: calc(100% + var(--gl-space-xs));
+  left: 0;
+  z-index: 1000;
+  min-width: 280px;
+  padding: var(--gl-space-md);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(var(--gl-blur-surface)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--gl-blur-surface)) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--gl-radius-lg);
+  box-shadow: var(--gl-shadow-lg);
+  animation: gl-datepicker-fade-in 0.2s ease-out;
+}
+
+@keyframes gl-datepicker-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header */
+.gl-datepicker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--gl-space-md);
+  gap: var(--gl-space-sm);
+}
+
+.gl-datepicker-month-year {
+  font-size: var(--gl-font-size-md);
+  font-weight: var(--gl-font-weight-semibold);
+  color: var(--gl-color-text);
+  flex: 1;
+  text-align: center;
+}
+
+.gl-datepicker-nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--gl-radius-md);
+  color: var(--gl-color-text);
+  cursor: pointer;
+  transition: all var(--gl-transition-base);
+}
+
+.gl-datepicker-nav-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.gl-datepicker-nav-button:active {
+  transform: scale(0.95);
+}
+
+/* Weekdays */
+.gl-datepicker-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--gl-space-xs);
+  margin-bottom: var(--gl-space-sm);
+}
+
+.gl-datepicker-weekday {
+  text-align: center;
+  font-size: var(--gl-font-size-xs);
+  font-weight: var(--gl-font-weight-semibold);
+  color: var(--gl-color-text-secondary);
+  padding: var(--gl-space-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* Days Grid */
+.gl-datepicker-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--gl-space-xs);
+  margin-bottom: var(--gl-space-md);
+}
+
+.gl-datepicker-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: var(--gl-font-size-sm);
+  font-weight: var(--gl-font-weight-medium);
+  color: var(--gl-color-text);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--gl-radius-md);
+  cursor: pointer;
+  transition: all var(--gl-transition-fast);
+}
+
+.gl-datepicker-day:hover:not(:disabled):not(.gl-datepicker-day-empty) {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.gl-datepicker-day-empty {
+  cursor: default;
+}
+
+.gl-datepicker-day-today {
+  color: var(--gl-color-accent);
+  font-weight: var(--gl-font-weight-semibold);
+  border-color: var(--gl-color-accent);
+}
+
+.gl-datepicker-day-selected {
+  background: var(--gl-color-accent);
+  color: white;
+  border-color: var(--gl-color-accent);
+}
+
+.gl-datepicker-day-selected:hover {
+  background: var(--gl-color-accent-dark);
+  border-color: var(--gl-color-accent-dark);
+}
+
+.gl-datepicker-day-disabled {
+  color: var(--gl-color-text-muted);
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Footer */
+.gl-datepicker-footer {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--gl-space-sm);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.gl-datepicker-today-button {
+  padding: var(--gl-space-xs) var(--gl-space-md);
+  font-size: var(--gl-font-size-sm);
+  font-weight: var(--gl-font-weight-medium);
+  color: var(--gl-color-accent);
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: var(--gl-radius-md);
+  cursor: pointer;
+  transition: all var(--gl-transition-base);
+}
+
+.gl-datepicker-today-button:hover {
+  background: rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.gl-datepicker-today-button:active {
+  transform: scale(0.98);
+}
+
+/* Dark mode adjustments */
+[data-gl-theme='dark'] .gl-datepicker-input {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-gl-theme='dark'] .gl-datepicker-input:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-gl-theme='dark'] .gl-datepicker-dropdown {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-gl-theme='dark'] .gl-datepicker-nav-button {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-gl-theme='dark'] .gl-datepicker-nav-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-gl-theme='dark'] .gl-datepicker-day:hover:not(:disabled):not(.gl-datepicker-day-empty) {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-gl-theme='dark'] .gl-datepicker-footer {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .gl-datepicker-dropdown {
+    animation: none;
+  }
+}

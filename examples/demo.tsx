@@ -39,6 +39,7 @@ import {
   SkeletonAvatar,
   SkeletonCard,
   SkeletonTable,
+  DatePicker,
 } from 'glass-ui';
 
 function Demo() {
@@ -48,6 +49,8 @@ function Demo() {
   const [activeNav, setActiveNav] = useState('home');
   const [sliderValue, setSliderValue] = useState(50);
   const [volumeValue, setVolumeValue] = useState(75);
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>();
+  const [birthDate, setBirthDate] = useState<Date | undefined>();
   const [showAlert, setShowAlert] = useState(true);
 
   return (
@@ -156,6 +159,42 @@ function Demo() {
                 >
                   <Input placeholder="Enter a message" size="md" error />
                 </InputGroup>
+              </Stack>
+            </CardBody>
+          </Card>
+
+          {/* DatePicker */}
+          <Card>
+            <CardHeader title="Date Picker" description="Glass-styled calendar date picker" />
+            <CardBody>
+              <Stack gap="lg">
+                <DatePicker
+                  label="Select Date"
+                  placeholder="Choose a date"
+                  value={selectedDate}
+                  onChange={setSelectedDate}
+                  size="md"
+                />
+                <DatePicker
+                  label="Birth Date"
+                  placeholder="MM/DD/YYYY"
+                  value={birthDate}
+                  onChange={setBirthDate}
+                  maxDate={new Date()}
+                  size="md"
+                />
+                <Grid cols={2} gap="md">
+                  <DatePicker
+                    label="Small Size"
+                    placeholder="Pick a date"
+                    size="sm"
+                  />
+                  <DatePicker
+                    label="Large Size"
+                    placeholder="Pick a date"
+                    size="lg"
+                  />
+                </Grid>
               </Stack>
             </CardBody>
           </Card>

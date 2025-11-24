@@ -9,6 +9,7 @@ export * from './components/Badge';
 export * from './components/Button';
 export * from './components/Card';
 export * from './components/Checkbox';
+export * from './components/DatePicker';
 export * from './components/Input';
 export * from './components/Layout';
 export * from './components/Menu';
