@@ -13,7 +13,7 @@ Perfect for creating modern, elegant UIs with authentic macOS/iOS feel.
 - **Dual API**: Use as React components or standalone CSS classnames
 - **Dark Mode Support**: Seamless light/dark theme switching
 - **Mobile-First**: Touch-friendly with responsive breakpoints
-- **26+ Components**: Complete UI toolkit from buttons to navigation
+- **27+ Components**: Complete UI toolkit from buttons to navigation
 - **TypeScript**: Full type definitions included
 - **Tree-Shakeable**: Import only what you need
 - **Zero Runtime**: No CSS-in-JS overhead - just static CSS
@@ -807,6 +807,89 @@ import { Menu } from 'apple-liquid-glass-ui';
 - `danger`: Red text for destructive actions
 - `disabled`: Disable interaction
 - `onClick`: Callback when clicked
+
+### Table
+
+Data tables with sorting, hover effects, and glass styling:
+
+```tsx
+import { Table } from 'apple-liquid-glass-ui';
+
+// Basic table
+<Table>
+  <Table.Header>
+    <Table.Row>
+      <Table.Head>Name</Table.Head>
+      <Table.Head>Email</Table.Head>
+      <Table.Head align="right">Status</Table.Head>
+    </Table.Row>
+  </Table.Header>
+  <Table.Body>
+    <Table.Row>
+      <Table.Cell>Sarah Chen</Table.Cell>
+      <Table.Cell>sarah@example.com</Table.Cell>
+      <Table.Cell align="right">
+        <Badge variant="success">Active</Badge>
+      </Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table>
+
+// Table with sorting
+const [sortColumn, setSortColumn] = useState<string | null>(null);
+const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
+
+<Table hover striped>
+  <Table.Header>
+    <Table.Row>
+      <Table.Head
+        sortable
+        sorted={sortColumn === 'name' ? sortDirection : null}
+        onSort={() => {
+          if (sortColumn === 'name') {
+            setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+          } else {
+            setSortColumn('name');
+            setSortDirection('asc');
+          }
+        }}
+      >
+        Name
+      </Table.Head>
+      <Table.Head>Project</Table.Head>
+      <Table.Head align="right">Progress</Table.Head>
+    </Table.Row>
+  </Table.Header>
+  <Table.Body>
+    {sortedData.map((row) => (
+      <Table.Row key={row.id}>
+        <Table.Cell>{row.name}</Table.Cell>
+        <Table.Cell>{row.project}</Table.Cell>
+        <Table.Cell align="right">{row.progress}%</Table.Cell>
+      </Table.Row>
+    ))}
+  </Table.Body>
+</Table>
+
+// Compact table
+<Table size="sm">
+  {/* ... */}
+</Table>
+```
+
+**Props:**
+- **Table**: `hover`, `striped`, `size` (`'sm' | 'md' | 'lg'`)
+- **Table.Head**: `sortable`, `sorted` (`'asc' | 'desc' | null`), `onSort`, `align` (`'left' | 'center' | 'right'`)
+- **Table.Cell**: `align` (`'left' | 'center' | 'right'`)
+
+**Features:**
+- Glassmorphism styling with backdrop blur
+- Sortable column headers with arrow indicators
+- Hover effect on rows
+- Striped rows for better readability
+- Three size variants (sm, md, lg)
+- Responsive design with horizontal scrolling
+- Cell alignment options
 
 ## Theming
 
