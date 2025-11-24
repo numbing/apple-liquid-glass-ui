@@ -4,6 +4,8 @@ A premium React UI library with Apple-inspired glass surfaces. Features true gla
 
 Perfect for creating modern, elegant UIs with authentic macOS/iOS feel.
 
+**[🚀 View Live Demo](https://glass-ui-eight.vercel.app)** | [📦 npm](https://www.npmjs.com/package/apple-liquid-glass-ui) | [📖 GitHub](https://github.com/numbing/glass-ui)
+
 ## Features
 
 - **True Glassmorphism**: Translucent backgrounds with backdrop blur and saturation filters
