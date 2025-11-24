@@ -8,10 +8,10 @@
   display: flex;
   align-items: center;
   padding: 0 var(--gl-space-xl);
-  background: var(--gl-color-surface-nav);
+  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(var(--gl-blur-nav)) saturate(180%);
   -webkit-backdrop-filter: blur(var(--gl-blur-nav)) saturate(180%);
-  border-bottom: 1px solid var(--gl-color-border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   z-index: var(--gl-z-nav);
 }
 
