@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
   Alert,
   Button,
@@ -44,6 +44,20 @@ import {
   Table,
 } from 'apple-liquid-glass-ui';
 
+const DARK_GRADIENTS = [
+  'linear-gradient(135deg, #0f172a 0%, #12304a 45%, #1c5560 100%)',
+  'linear-gradient(135deg, #102136 0%, #1f3254 50%, #2c4c78 100%)',
+  'linear-gradient(135deg, #111f2c 0%, #2d2f55 50%, #4c3b78 100%)',
+  'linear-gradient(135deg, #15202b 0%, #2e2a4a 45%, #563b6e 100%)',
+];
+
+const LIGHT_GRADIENTS = [
+  'linear-gradient(135deg, #cfe0ff 0%, #b6c9ff 45%, #e5e9ff 100%)',
+  'linear-gradient(135deg, #ffd8ec 0%, #f2c7ff 50%, #dbe6ff 100%)',
+  'linear-gradient(135deg, #d4f2ff 0%, #bfe3ff 45%, #e3d3ff 100%)',
+  'linear-gradient(135deg, #ffe0d6 0%, #f6c2ff 50%, #cfe5ff 100%)',
+];
+
 function Demo() {
   const [sheetOpen, setSheetOpen] = useState(false);
   const [dropdownValue, setDropdownValue] = useState('');
@@ -56,6 +70,30 @@ function Demo() {
   const [showAlert, setShowAlert] = useState(true);
   const [sortColumn, setSortColumn] = useState<string | null>(null);
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const gradientSet = theme === 'dark' ? DARK_GRADIENTS : LIGHT_GRADIENTS;
+  const [bgGradient, setBgGradient] = useState(gradientSet[0]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const doc = document.documentElement;
+      const scrollable = doc.scrollHeight - window.innerHeight;
+      const ratio = scrollable > 0 ? Math.min(1, doc.scrollTop / scrollable) : 0;
+      const nextIndex = Math.min(
+        gradientSet.length - 1,
+        Math.floor(ratio * gradientSet.length)
+      );
+      setBgGradient(gradientSet[nextIndex]);
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [gradientSet]);
+
+  useEffect(() => {
+    setBgGradient(gradientSet[0]);
+  }, [gradientSet]);
 
   // Table data
   const projectData = [
@@ -91,9 +129,10 @@ function Demo() {
   return (
     <div
       className="gl-base"
+      data-gl-theme={theme}
       style={{
         minHeight: '100vh',
-        background: 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 25%, #4c1d95 50%, #831843 75%, #7f1d1d 100%)',
+        background: bgGradient,
         backgroundAttachment: 'fixed'
       }}
     >
@@ -116,6 +155,14 @@ function Demo() {
         <GlassTopNav.Right>
           <Button variant="primary" size="sm">
             ⭐️ Star on GitHub
+          </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            style={{ marginLeft: '0.5rem' }}
+          >
+            {theme === 'dark' ? '☀️ Light' : '🌙 Dark'}
           </Button>
         </GlassTopNav.Right>
       </GlassTopNav>
