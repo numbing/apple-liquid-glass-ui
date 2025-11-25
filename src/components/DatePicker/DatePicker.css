@@ -3,7 +3,6 @@
 .gl-datepicker-container {
   position: relative;
   width: 100%;
-  z-index: var(--gl-z-dropdown);
 }
 
 /* Label */
@@ -89,7 +88,7 @@
   position: absolute;
   top: calc(100% + var(--gl-space-xs));
   left: 0;
-  z-index: var(--gl-z-dropdown);
+  z-index: 9999;
   min-width: 280px;
   padding: var(--gl-space-md);
   background: rgba(255, 255, 255, 0.72);

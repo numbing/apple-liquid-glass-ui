@@ -64,7 +64,6 @@
   position: relative;
   display: inline-block;
   width: 100%;
-  z-index: var(--gl-z-dropdown);
 }
 
 .gl-dropdown-trigger {
@@ -126,7 +125,7 @@
   border-radius: var(--gl-radius-md);
   box-shadow: var(--gl-shadow-md);
   overflow: hidden;
-  z-index: var(--gl-z-dropdown);
+  z-index: 9999;
   max-height: 300px;
   overflow-y: auto;
   animation: gl-scale-in var(--gl-transition-fast);

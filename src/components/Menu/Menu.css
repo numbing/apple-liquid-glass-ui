@@ -3,7 +3,6 @@
 .gl-menu-wrapper {
   position: relative;
   display: inline-block;
-  z-index: var(--gl-z-dropdown);
 }
 
 .gl-menu {
@@ -16,7 +15,7 @@
   border: 1px solid var(--gl-color-border);
   border-radius: var(--gl-radius-lg);
   box-shadow: var(--gl-shadow-lg), var(--gl-shadow-inner);
-  z-index: var(--gl-z-dropdown);
+  z-index: 9999;
   animation: gl-scale-in var(--gl-transition-fast);
   max-height: 400px;
   overflow-y: auto;
