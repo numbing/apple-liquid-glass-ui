@@ -64,6 +64,7 @@
   position: relative;
   display: inline-block;
   width: 100%;
+  z-index: var(--gl-z-dropdown);
 }
 
 .gl-dropdown-trigger {

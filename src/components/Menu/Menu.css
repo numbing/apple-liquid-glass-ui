@@ -3,6 +3,7 @@
 .gl-menu-wrapper {
   position: relative;
   display: inline-block;
+  z-index: var(--gl-z-dropdown);
 }
 
 .gl-menu {
